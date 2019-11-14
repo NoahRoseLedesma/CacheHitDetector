@@ -11,7 +11,7 @@ class Line:
     def updateAge(self, age_accessed):
         if(self.age == age_accessed):
             self.age = 0
-        if(self.age < age_accessed):
+        elif(self.age < age_accessed):
             self.age += 1
 
 class Set:
@@ -42,7 +42,8 @@ class Set:
                 max_age = line.age
                 line_with_max_age = line_index
             line_index += 1
-        
+       
+        print("Evict line", line_with_max_age)
         return (line_with_max_age, max_age)
 
     def updateAges(self, age_accessed):
@@ -64,5 +65,5 @@ class Cache:
     def updateTag(self, set_id, tag):
         return self.sets[set_id].updateTag(tag)
 
-    def updateAges(self, set_id):
-        self.sets[set_id].updateAges()
+    def updateAges(self, set_id, age_accessed):
+        self.sets[set_id].updateAges(age_accessed)
