@@ -26,7 +26,7 @@ Evict line 1
 ```
 
 This means that test case #12 is a write operation on set '1' to tag 4 offset 1. 
-The value being written is the binary value '100' and the write is a cache miss.
+The value being written is the binary value '1011' and the write is a cache miss.
 Line '1' of set '2' is being overwritten for this write.
 After the write, the ages and tags of the three lines in set '1' are displayed.
 
